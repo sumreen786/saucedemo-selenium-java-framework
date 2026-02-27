@@ -13,4 +13,13 @@ public class LoginTest extends BaseTest {
         login.login("standard_user", "secret_sauce");
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
     }
+
+    @Test
+    public void lockedLoginTest() {
+        LoginPage login = new LoginPage(driver);
+        login.login("locked_out_user", "secret_sauce");
+
+        String error = login.getErrorMessage();
+        Assert.assertTrue(error.contains("Sorry, this user has been locked out."));
+    }
 }

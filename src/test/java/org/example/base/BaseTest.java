@@ -1,27 +1,29 @@
 package org.example.base;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseTest {
     protected WebDriver driver;
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
 
         //Creates a remote browser session on Selenium Grid.
-        ChromeOptions chromeOptions=new ChromeOptions();
-        driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444"),chromeOptions );
+        ChromeOptions chromeOptions = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444"), chromeOptions);
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com");
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

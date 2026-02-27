@@ -4,8 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/sumreen/IdeaProjects/saucedemo-selenium-java-framework">
         <classes>
             <class name="org.example.tests.LoginTest">
-            <methods><include name="validLoginTest"/>
-            </methods>
+
             </class>
         </classes>
     </test>
