@@ -13,7 +13,7 @@ import java.net.URL;
 public class BaseTest {
     protected WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() throws MalformedURLException {
 
         //Creates a remote browser session on Selenium Grid.
@@ -23,7 +23,7 @@ public class BaseTest {
         driver.get("https://www.saucedemo.com");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
