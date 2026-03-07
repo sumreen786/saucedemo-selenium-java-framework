@@ -22,4 +22,5 @@ public class LoginTest extends BaseTest {
         String error = login.getErrorMessage();
         Assert.assertTrue(error.contains("Sorry, this user has been locked out."));
     }
+
 }
