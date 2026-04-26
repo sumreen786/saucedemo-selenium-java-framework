@@ -4,7 +4,6 @@
     <test verbose="2" preserve-order="true" name="C:/Users/sumreen/IdeaProjects/saucedemo-selenium-java-framework">
         <classes>
             <class name="org.example.tests.LoginTest">
-
             </class>
         </classes>
     </test>

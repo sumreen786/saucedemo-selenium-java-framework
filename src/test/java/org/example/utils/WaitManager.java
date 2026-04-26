@@ -11,7 +11,7 @@ public class WaitManager {
     WebDriverWait wait;
     public final int DURATION = 10;
 
-    public WaitManager(WebDriver wd) {
+    public WaitManager(WebDriver wd){
         this.driver1 = wd;
     }
 
@@ -21,15 +21,18 @@ public class WaitManager {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void explicitWaitClickable(By locator) {
-
-        wait = new WebDriverWait(driver1, Duration.ofSeconds(DURATION));
-        WebElement submit = wait.until(ExpectedConditions.elementToBeClickable(locator));
-        submit.click();
+    public WebElement waitForClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public void waitForVisibility(By locator) {
         WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(DURATION));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+
+    public boolean waitForURLContains(String url) {
+        WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(DURATION));
+        return wait.until(ExpectedConditions.urlContains(url));
+    }
 }
