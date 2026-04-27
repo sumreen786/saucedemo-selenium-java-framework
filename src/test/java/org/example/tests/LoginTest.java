@@ -67,12 +67,12 @@ public class LoginTest extends BaseTest {
             String currentUrl = driver.getCurrentUrl();
             Assert.assertTrue(currentUrl.contains(value));
 
-        } else if (type.equals("error")) {
-
-            String errorMsg = loginPage.getErrorMessage();
+        } else if (type.equals("error") || type.equals("invalid")) {
+            String errorMsg = loginPage.getLockedErrorMessage();
             Assert.assertTrue(errorMsg.contains(value));
 
-        } else if (type.equals("image")) {
+        }
+        else if (type.equals("image")) {
 
             InventoryListPage inventoryPage = new InventoryListPage(driver);
             int brokenImages = inventoryPage.getBrokenImageCount();

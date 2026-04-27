@@ -26,7 +26,9 @@ public class ExcelUtils {
             Row row = sheet.getRow(i);
 
             // ✅ skip null rows
-            if (row == null) continue;
+            if (row == null || formatter.formatCellValue(row.getCell(0)).isEmpty()) {
+                continue;
+            }
 
             String username = formatter.formatCellValue(row.getCell(0));
             String password = formatter.formatCellValue(row.getCell(1));

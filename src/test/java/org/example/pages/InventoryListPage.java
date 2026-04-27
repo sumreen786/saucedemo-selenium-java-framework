@@ -9,17 +9,17 @@ import java.util.List;
 public class InventoryListPage {
     WebDriver driver;
 
-    By addToCartBtns = By.xpath("//button[text()='Add to cart']");
-    By removeBtns = By.xpath("//button[text()='Remove']");
+//    By addToCartBtns = By.xpath("//button[text()='Add to cart']");
+//    By removeBtns = By.xpath("//button[text()='Remove']");
 
     public InventoryListPage(WebDriver driver) {
         this.driver = driver;
 
     }
 
-    public boolean isPageLoaded() {
-        return driver.findElement(By.id("inventory_container")).isDisplayed();
-    }
+//    public boolean isPageLoaded() {
+//        return driver.findElement(By.id("inventory_container")).isDisplayed();
+//    }
 
     public int getBrokenImageCount() {
         List<WebElement> images = driver.findElements(By.cssSelector(".inventory_item_img img"));
@@ -35,14 +35,7 @@ public class InventoryListPage {
         return count;
     }
 
-//    public boolean validateAddToCart(){
-//        List<WebElement> addBtns = driver.findElements(addToCartBtns);
-//        for(WebElement btn:addBtns){
-//          btn.click();
-//        }
-//        List<WebElement> remBtns = driver.findElements(removeBtns);
-//        return remBtns.size() > 0;
-//    }
+
 
 
 }

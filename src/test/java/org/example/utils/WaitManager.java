@@ -26,7 +26,7 @@ public class WaitManager {
     }
 
     public void waitForVisibility(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(DURATION));
+         wait = new WebDriverWait(driver1, Duration.ofSeconds(DURATION));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

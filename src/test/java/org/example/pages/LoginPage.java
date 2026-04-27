@@ -20,9 +20,9 @@ public class LoginPage {
         this.wait = new WaitManager(driver1);
     }
 
-    public boolean isDisplayed() {
-        return driver.findElement(By.className("inventory_container")).isDisplayed();
-    }
+//    public boolean isDisplayed() {
+//        return driver.findElement(By.className("inventory_container")).isDisplayed();
+//    }
 
     public void login(String user, String pass) {
 
@@ -36,11 +36,15 @@ public class LoginPage {
         wait.waitForClickable(loginButton).click();
     }
 
-    public String getErrorMessage() {
+    public String getLockedErrorMessage() {
         wait.waitForVisibility(errorMsg);
         return driver.findElement(errorMsg).getText();
     }
 
+//    public String getErrorMessageForInvallidCred() {
+//        wait.waitForVisibility(invalidCred);
+//        return driver.findElement(invalidCred).getText();
+//    }
 
 }
 
