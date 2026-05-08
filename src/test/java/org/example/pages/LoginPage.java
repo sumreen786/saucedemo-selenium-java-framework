@@ -20,9 +20,7 @@ public class LoginPage {
         this.wait = new WaitManager(driver1);
     }
 
-//    public boolean isDisplayed() {
-//        return driver.findElement(By.className("inventory_container")).isDisplayed();
-//    }
+
 
     public void login(String user, String pass) {
 
@@ -32,8 +30,10 @@ public class LoginPage {
         wait.explicitWaitSendKeys(passwordField);
         driver.findElement(passwordField).sendKeys(pass);
 
+            wait.waitForClickable(loginButton);
+            driver.findElement(loginButton).click();
 
-        wait.waitForClickable(loginButton).click();
+
     }
 
     public String getLockedErrorMessage() {

@@ -58,6 +58,8 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.login(username, password);
+        System.out.println("Running test with -> Username: " + username + " | Type: " + type + " | Expected: " + value);
+        System.out.println("--------------------------------------------------");
 
         // ✅ VERY IMPORTANT
         type = type.trim().toLowerCase();
@@ -71,6 +73,7 @@ public class LoginTest extends BaseTest {
             String errorMsg = loginPage.getLockedErrorMessage();
             Assert.assertTrue(errorMsg.contains(value));
 
+
         }
         else if (type.equals("image")) {
 
@@ -78,6 +81,7 @@ public class LoginTest extends BaseTest {
             int brokenImages = inventoryPage.getBrokenImageCount();
 
             Assert.assertTrue(brokenImages > 0);
+
 
         } else {
             throw new RuntimeException("Invalid type in Excel: " + type);

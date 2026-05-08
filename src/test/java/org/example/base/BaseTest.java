@@ -16,7 +16,7 @@ public class BaseTest {
     public void setUp() throws MalformedURLException {
 
 //        ChromeOptions chromeOptions = new ChromeOptions();
-      driver=new ChromeDriver();
+        driver=new ChromeDriver();
 
 
 //        driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444"), chromeOptions);
